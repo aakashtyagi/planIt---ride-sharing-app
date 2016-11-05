@@ -1,0 +1,18 @@
+[
+{
+    "fields": {
+        "username": "admin",
+        "first_name": "Macrobits",
+        "last_name": "Administrator",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$15000$yo7wYBJKzp42$5YSNZoJzGPduAVUX7ss9wB/otKbU0Ofio2C+0lyugvc=",
+        "email": "webmaster@macrobits.com"
+    },
+    "model": "auth.user",
+    "pk": 1
+}
+]

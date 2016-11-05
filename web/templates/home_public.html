@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<!-- Header
+        ============================================= -->
+        <header id="header" class="full-header dark transparent-header  static-sticky" data-sticky-class="not-dark" data-sticky-offset="0">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="#" class="standard-logo" data-dark-logo="/static/images/planit.png"><img src="/static/images/planit-black.png" alt="planIt"></a>
+                        <a href="#" class="retina-logo" data-dark-logo="/static/images/planit.png"><img src="/static/images/planit-black.png" alt="planIt"></a>
+                    </div><!-- #logo end -->
+
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav id="primary-menu">
+
+                        <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+                            <li><a href="{% url 'getting-around' %}" data-href="#wrapper"><div>How it works</div></a></li>
+                            <li><a href="/" data-href="#wrapper"><div>Home</div></a></li>
+                            <li><a href="/trips/plan.html" data-href="#"><div>Plan</div></a></li>
+                            <li><a href="/trips/" data-href="#"><div>Join</div></a></li>
+                            <!-- <li><a href="/ideas/spring-break/" data-href="#"><div>SPring Break</div></a></li> -->
+                            {% if request.user.is_authenticated %}
+                            <li class="dropdown">>My Profile<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="/accounts/profile.html" data-href="#" style="background-color:white"><div>View my profile</div></a></li>
+                                  <li><a href="/logout/" data-href="#" style="background-color:white"><div>Logout</div></a></li>
+                                </ul>
+                            </li>
+                            {% else %}
+                            <li><a href="/login/" data-href="#"><div>Login</div></a></li>
+                            {% endif %}
+                            {% if request.user.is_authenticated %}
+                            <form class="navbar-form navbar-right" role="search" style="margin-top: 15px;" method="post" action="{% url 'search_trips' %}">
+                                {% csrf_token %}
+                                <div class="form-group input-group hidden-xs hidden-sm">
+                                    <input type="text" name="name" class="form-control" placeholder="Search for...">
+                                    <input type="hidden" name="depart" value="{% now 'Y-m-d' %}"/>
+                                    <input type="hidden" name="seats" value="1"/>
+                                  <span class="input-group-btn">
+                                      <button class="btn btn-default" type="submit">Go!</button>
+                                  </span>
+                                </div>
+
+                            </form>
+                        {% endif %}
+                        </ul>
+                        
+
+                    </nav><!-- #primary-menu end -->
+
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+{% endblock %}
+
+{% block css-extras %}
+{{ block.super }}
+
+
+{% endblock %}
+
+{% block main-container %}
+
+
+{% include 'home_banner.html' %}
+
+
+{% endblock %}

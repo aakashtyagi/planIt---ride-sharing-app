@@ -1,0 +1,28 @@
+{% extends 'mb_table.html' %}
+
+
+{% block main-container %}
+<div class="container">
+<div class="page-header">
+    <h2>My Profile</h2>
+    <h4>Welcome, {{ user.get_full_name }}</h4>
+</div>
+
+
+<div class="" role="profile_panel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General Information</a></li>
+        <li role="presentation"><a href="#trips" aria-controls="trips" role="tab" data-toggle="tab">My Trips</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="profile_panel" class="tab-pane active" id="general">
+            {% include 'accounts/general_information.html' %}
+        </div>
+        <div role="profile_panel" class="tab-pane" id="trips">
+            {% include 'accounts/my_trips.html' %}
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}

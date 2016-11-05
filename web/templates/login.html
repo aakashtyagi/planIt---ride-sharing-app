@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load partition %}
+
+{% block main-container %}
+<div class="page-header text-center">
+    <h1>Plan It is available for the universities listed below.</h1>
+</div>
+
+{% for row in edus|columns:3 %}
+<div class='row-fluid'>
+    {% for edu in row %}
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">
+            <h4>{{ edu.name }}</h4>
+        </div>
+    {% endfor %}
+
+    {% if forloop.counter == 1 %}
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">&nbsp;</div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">&nbsp;</div>
+    {% elif forloop.counter == 2 %}
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">&nbsp;</div>
+    {% endif %}
+</div>
+{% empty %}
+    <h4>Not available at any universities</h4>
+{% endfor %}
+
+<br/>
+
+
+<div class="text-center">
+    <h3>Please login using your Facebook account.</h3>
+    <a href="http://{{ request.META.HTTP_HOST }}/accounts/facebook/login/?process=login">
+        <img src="/static/images/facebook-login-button.png">
+    </a>
+    <p>Please note that your Facebook account must be registered using an email address from one of the universities listed above.</p>
+</div>
+
+{% endblock %}

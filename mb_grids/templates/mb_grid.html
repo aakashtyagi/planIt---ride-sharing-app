@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block css-extras2 %}
+{{ block.super }}
+
+<link href="/static/css/grids/jquery.bootgrid.css" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block js-imports %}
+{{ block.super }}
+<script src="/static/js/grids/jquery.bootgrid.js"></script>
+{% endblock %}

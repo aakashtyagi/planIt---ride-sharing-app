@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block main-container %}
+
+   
+<div class="container">
+<div class="page-header">
+    <h1>{% trans page_title %}</h1>
+</div>
+<div class="form-view">
+    
+    
+    <!-- <h3>{% trans page_subtitle %}</h3> -->
+
+    <div class="row col-md-offset-1  " style="padding: 100px 0; background-image: url('/static/images/tcu-campus-rsz.jpg');">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <form id="mbform" method="post" enctype="multipart/form-data" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+                {% csrf_token %}
+                {{ page_form|bootstrap }}
+                <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the <a target="_blank" href="{% url 'terms-of-use' %}" style="color:purple;">Terms of use</a> and <a target="_blank" href="{% url 'privacy-policy' %}" style="color:purple;">Privacy Policy</a>
+                <button class="btn btn-block" type="submit">{% trans page_submit %}</button>
+            </form>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1">
+            <p>
+                <strong>Please use an email account associated with one of the universities below</strong>
+            </p>
+            <!-- <ul class="list-group">
+                {% for edu in edus %}
+                <li class="list-group-item"><a href="{{ edu.url }}">{{ edu.name }}</a></li>
+                {% endfor %}
+            </ul> -->
+        </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock %}
+
+
+

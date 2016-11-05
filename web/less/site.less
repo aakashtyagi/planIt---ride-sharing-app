@@ -1,0 +1,160 @@
+// -*- less-css-compile-at-save: t; less-css-output-directory: "../static/css" -*- 
+@import "../../mb_style/less/mb_style.less";
+
+@planit-purple: #7a58ae;
+@navbar-background: none;
+@navbar-background-color: @planit-purple;
+@navbar-border: transparent;
+@navbar-radius: 0px;
+@navbar-color: #ffffff;
+
+@btn-color: #ffffff;
+@btn-background-color: @planit-purple;
+@btn-background: none;
+@btn-border-color: darken(@btn-background-color, 5%);
+
+@body-background: #ffffff;
+
+body{
+	color:#6c558e;
+	font-size: 10pt;
+}
+
+.main-container{
+    margin-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.navbar-default{
+	background-color: @planit-purple;
+	#gradient.vertical(@btn-background-color, darken(@btn-background-color, 10%));
+	border: 0px;
+	border-radius: 0px;
+
+	.navbar-header{
+        margin-right: 15px;
+        top: 18px;
+
+        @media (max-width: @screen-sm-max) {
+             margin-right: 0px;
+        }
+
+        .navbar-brand{
+            background-color: transparent;
+            &:hover{
+                background-color: transparent;
+            }
+        }
+    }
+
+    .navbar-toggle{
+         margin-right: 0px;
+         
+         .icon-bar{
+             background-color: white;
+         }
+    }
+
+    .navbar-right{
+       .input-group{
+           max-width: 300px;
+           top: 8px;
+           float: right;
+           right: 25px;
+       }
+    }
+
+    .nav{
+        li{
+           a{
+               background-color: transparent;
+               background: none;
+               &:hover{
+
+               }
+               .glyphicon{
+                   margin-right: 5px;
+                     vertical-align: middle;
+                     padding-bottom: 5px;
+               }
+
+               @media (max-width: @screen-sm-max) {
+                   margin-left: 15px;
+               }
+           }
+        }
+    }
+}
+
+.btn{
+   .button-variant(@btn-color, @btn-background-color, @btn-border-color);
+   #gradient.vertical(@btn-background-color, darken(@btn-background-color, 10%));
+   border-radius: 0px;
+
+   &:focus, &:active, &:hover{
+       #gradient.vertical(@btn-background-color, darken(@btn-background-color, 10%));
+       border-radius: 0px;
+   }
+}
+
+a{
+    color: #7a58ae;
+    &:focus, &:active, &:hover{
+        color: #7a58ae;
+    }
+}
+
+.trip{
+
+    .panel-heading{
+        background-color: @planit-purple;
+        #gradient.vertical(@btn-background-color, darken(@btn-background-color, 10%));
+        color: white;
+        .text-center();
+    }
+
+    blockquote{
+        margin-top: 5px;
+        .text-left();
+        font-size: 10pt;
+    }
+
+    a{
+        color: white;
+        &:focus, &:active, &:hover{
+            color: white;
+        }
+
+        img{
+            .text-center();
+            width: 100%;
+        }
+    }
+    
+}
+
+.table{
+
+    tbody{
+
+	tr{
+
+	    
+	    &:trip_status{
+	
+
+	
+		&:closed{
+
+		}
+	    }
+	}
+    }
+}
+
+
+/* .table-hover > tbody > tr:hover */
+
+
+

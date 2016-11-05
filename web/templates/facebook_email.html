@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block main-container %}
+<div class="container">
+	<div class="row center col-md-offset-4">
+		<div class="col-md-6">
+    	<div class="fancy-title title-bottom-border center">
+                        <h1>Email Verification <span></span></h1>
+                    </div>
+		<form action="" method="post">
+		    {% csrf_token %}
+		    {{ form|bootstrap }}
+		    <!-- <input type="submit" value="Submit" /> -->
+		    <button type="submit" class="button button-large button-border button-rounded">Submit</button></div>
+		</form>
+	</div>
+</div>
+</div>
+{% endblock %}

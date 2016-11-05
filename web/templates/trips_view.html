@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block main-container %}
+
+
+<div class="container">
+{% include 'trips/leaving_today.html' %}
+{% include 'trips/leaving_this_week.html' %}
+{% include 'trips/recently_added.html' %}
+</div>
+{% endblock %}

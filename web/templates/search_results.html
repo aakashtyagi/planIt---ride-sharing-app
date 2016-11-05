@@ -1,0 +1,47 @@
+{% extends 'mb_grid.html' %}
+{% load bootstrap %}
+
+{% block main-container %}
+<div class="container">
+<div class="page-header">
+    <h1>Search Results</h1>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+        <form id="mbform" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ search_form|bootstrap }}
+            <button class="btn pull-right" type="button" onclick="$('#mbform').submit();">Search</button>
+        </form>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+        &nbsp;
+    </div>
+</div>
+<hr class="featurette-divider"/>
+
+
+
+<div id="grid" class="">
+    <table id="grid-data" class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th data-column-id="name">Trip Name</th>
+            <th data-column-id="start">Start Date</th>
+            <th data-column-id="destination">Destination</th>
+            <th data-column-id="return">Return Date</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+</div>
+{% endblock %}
+
+
+
+{% block js-imports %}
+{{ block.super }}
+<script type="text/javascript" src="/static/js/search.js"></script>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block main-container %}
+<div class="container">
+    <div class="row center col-md-offset-4">
+        <div class="col-md-6">
+            <div class="fancy-title title-bottom-border center">
+                <h1>{{ category.title }}<span></span></h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <p class="lead">{{ category.long_Desc }}</p>
+    </div>
+    <div id="portfolio" class="portfolio-3 clearfix">
+
+        <div class="row">
+            {% if places %}
+                {% for place in places %}
+                    <article class="portfolio-item pf-graphics pf-uielements">
+                        <div class="portfolio-image">
+                            <a href="#">
+                                <img class="img-responsive" src="{{place.image_url}}" alt="{{place.alt_tag}}">
+                            </a>
+                            <div class="portfolio-overlay">
+                                <a href="/trips/" class="left-icon"><i class="icon-line-search"></i></a>
+                                <a href="/trips/plan.html" class="right-icon"><i class="icon-line-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-desc">
+                            <h3>{{ place.title }}</h3>
+                            <span>{{ place.desc }}</span>
+                        </div>
+                    </article>
+                {% endfor %}
+            {% else %}
+                <strong>There are no places present.</strong>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block main-container %}
+<div class="container">
+    <h1>Travelers</h1>
+    <p class="lead">People who have joined the trip</p>
+<table class="table table-hover table-bordered">
+    <tr>
+        <td>Name</th>
+        <td>Email</th>
+        <td>Willing to share Car</th>
+        <td>Willing to share Gas</th>
+        <!-- <td width="50">Action</td> -->
+    </tr>
+    {% for traveler in trip.party.all %}
+    <tr>
+        {% if traveler.accepted %}
+        <td>{{ traveler.user.first_name }}&nbsp;{{ traveler.user.last_name }}</td>
+        <td>{{ traveler.user.email }}</td>
+        <td>{% if traveler.car == True %}Yes{% else %}No{% endif %}</td>
+        <td>{% if traveler.gas == True %}Yes{% else %}No{% endif %}</td>
+        {% endif %}
+       <!--  {% if traveler.accepted %}
+        <td> <span style="color: green;" class="glyphicon glyphicon-ok" aria-hidden="true"></span> </td>
+        {% else %}
+        <td>
+            <form action="{% url 'trip_approve' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="trip_id" value="{{ trip.id }}"/>
+                <input type="hidden" name="user_id" value="{{ traveler.user.id }}"/>
+                <input type="submit" value="Approve" class="btn"/>
+            </form>
+        </td>
+
+        {% endif %} -->
+
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3">No Current Travelers</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

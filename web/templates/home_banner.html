@@ -1,0 +1,196 @@
+{% load staticfiles %}
+
+
+<section id="slider" class="force-full-screen full-screen hidden-xs">
+
+            <div class="force-full-screen full-screen dark section nopadding nomargin noborder ohidden">
+
+                <div class="container clearfix">
+                    <div class="heading-block bottommargin center">
+                        <p1><br/>planIt</p1>
+                        <p class="lead" data-animate="fadeInUp" data-delay="200">go travel.</p>
+                        <!-- <a data-animate="fadeInUp" data-delay="400" href="{% url 'getting-around' %}" data-href="#section-about" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin" style="margin-top: 30px;">How it works</a> -->
+                       
+                    </div>
+                    <div class="row col-md-8 col-md-offset-2" style="margin-top:-2em">
+                      <p class="lead center" style="font-size:1.7em">Connecting people who need to travel with drivers who have empty seats</p>
+                    </div>
+                        <div class="row col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                            <form class="form center" role="search" style="margin-top: 10px; " method="post" action="{% url 'search_trips' %}">
+                                {% csrf_token %}
+                                <div class="form-group input-group hidden-xs">
+                                    <input type="text" name="name" style=" background-color:white; color:black; font-size:1.5em;" class="form-control" placeholder="Find a ride to your next destination">
+                                    <input type="hidden" name="depart" value="{% now 'Y-m-d' %}"/>
+                                    <input type="hidden" name="seats" value="1"/>
+                                  <span class="input-group-btn">
+                                      <button class="btn btn-default" style="color:white;background-color:#008080;" type="submit">Explore!</button>
+                                  </span>
+                                </div>
+
+                            </form>
+                            <div class="row center">
+                              <p class="lead center">OR</p>
+                              <a data-animate="fadeInUp" data-delay="200" href="/trips/plan.html" data-href="#section-about" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin" style="margin-top: 00px;">offer a ride</a>
+                            </div>
+                        </div>
+
+                </div>
+
+
+
+                <div class="video-wrap">
+                    <video poster="/static/images/watercolor_map.jpg" preload="auto" loop autoplay muted>
+                        <source src="{% static 'images/video.mp4' %}" type='video/mp4' />
+                        
+                    </video>
+                    <div class="video-overlay" style="background-color: rgba(0,0,0,0.45);"></div>
+                </div>
+
+            </div>
+
+</section>
+
+        
+
+          <div class="section parallax nomargin noborder hidden-sm hidden-md hidden-lg" style="padding: 100px 0; background-image: url('/static/images/travel-time-2.jpg');">
+            <div class="container ">
+                <div class="row center">
+                    <div class="heading-block nobottommargin center" style="margin-top:-5em">
+                        <h1></h1>
+                        
+                            <span class="text-rotater" style="color:black;" >
+                                <strong style="font-size:2em">planIt</strong><br/>go travel.<br/><br/>
+                                
+                            </span>
+                            <!-- <a data-animate="fadeInUp" data-delay="400" href="{% url 'getting-around' %}"  class="button button-border button-rounded button-large noleftmargin nobottommargin" style="margin-top: 10px;">How it works</a> -->                       
+                        
+                    </div>
+                    <!-- <div class="row col-xs-8 col-xs-offset-2" style="margin-top:-2em">
+                      <p class="lead center" style="font-size:1.7em">Connecting people who need to travel with drivers who have empty seats</p>
+                    </div> -->
+                    <div class="row col-xs-8 col-xs-offset-2">
+                            <form class="form center" role="search" style="margin-top: 10px; " method="post" action="{% url 'search_trips' %}">
+                                {% csrf_token %}
+                                <div class="form-group input-">
+                                    <input type="text" name="name" style="text-align:center; background-color:white; color:black; font-size:1.5em;" class="form-control" placeholder="Where to?">
+                                    <input type="hidden" name="depart" value="{% now 'Y-m-d' %}"/>
+                                    <input type="hidden" name="seats" value="1"/><br/>
+                                  <span class="input-group-btn">
+                                      <button class="btn btn-default" style="color:white;background-color:#008080;" type="submit">Explore!</button>
+                                  </span>
+                                </div>
+
+                            </form>
+                            <div class="row center">
+                              <p class="lead center">OR</p>
+                              <a href="/trips/plan.html" data-href="#section-about" class="button button-border button-dark button-rounded button-large noleftmargin nobottommargin" style="margin-top: 00px;">offer a ride</a>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+<section id="content">
+    {% include 'home_ideas.html' %}
+
+            <div class="content-wrap nopadding">
+
+                
+
+                    <div class="container-fluid clearfix">
+
+                        <div id="section-works" class="page-section notoppadding">
+
+                       
+                        <!-- <div class="clear"></div> -->
+                        <div id="section-about" class="center page-section notoppadding ">
+                            <div class="row center nobottommargin ">
+                                <br/><br/><h1>Let's create memories</h1>
+                                <p class="lead" style="margin-top:-25px;">Discover trips, or create your own.</p>
+                            </div>
+                            <br/><br/>
+                            <div class="row divcenter hidden-sm hidden-xs" style="max-width: 1000px;">
+
+                                    <div class="row">
+                                  <div class="col-xs-12 col-md-4">
+                                    <a href="/trips/plan.html" class="thumbnail">
+                                      <img alt="plan" src="/static/images/features/planit.png" style="height: 100%; width: 100%; display: block;">
+                                    </a>
+                                    
+                                  </div>
+                                  <div class="col-xs-12 col-md-4">
+                                    <a href="/trips/" class="thumbnail">
+                                      <img alt="join" src="/static/images/features/join.png" style="height: 100%px; width: 100%; display: block;">
+                                    </a>
+                                   
+                                  </div>
+                                  <div class="col-xs-12 col-md-4">
+                                    <a href="{% url 'search_trips' %}" class="thumbnail">
+                                      <img alt="search" src="/static/images/features/search.png" style="height: 100%px; width: 100%; display: block;">
+                                    </a>
+                                    
+                                  </div>
+                                  
+                                </div>
+                            </div>
+                            <div class="row divcenter hidden-md hidden-lg" style="max-width: 1000px;">
+
+                                    <div class="row">
+                                  <div class="col-xs-12 col-md-4">
+                                    <a href="/trips/plan.html" class="thumbnail">
+                                      <img alt="plan" src="/static/images/features/planit.png" style="height: 75%; width: 75%; display: block;">
+                                    </a>
+                                    
+                                  </div>
+                                  <div class="col-xs-12 col-md-4">
+                                    <a href="/trips/" class="thumbnail">
+                                      <img alt="join" src="/static/images/features/join.png" style="height: 75%px; width: 75%; display: block;">
+                                    </a>
+                                   
+                                  </div>
+                                  <div class="col-xs-12 col-md-4">
+                                    <a href="{% url 'search_trips' %}" class="thumbnail">
+                                      <img alt="search" src="/static/images/features/search.png" style="height: 75%px; width: 75%; display: block;">
+                                    </a>
+                                    
+                                  </div>
+                                  
+                                </div>
+                            </div>
+
+                    </div>
+
+
+
+                    <div class="section nomargin" style="background-image: url('/static/images/explore.jpg'); ">
+                                <div class="container clearfix">
+                                    <div class="divcenter center" style="max-width: 900px; margin-top:-70px;">
+                                        <h1>Our Community</h1>
+                                        <h2 class="nobottommargin">A journey is best measured in friends, rather than miles.</h2>
+                                        <br/><!-- <h3 class="nobottommargin t300 ls1">Welcome to planIt. A place where you can fulfill your travel dreams and meet amazing people along the way. It helps you create the trip you've always wanted to go on, and allow other interested people to join you, so together you can create memories that can't be replaced.<br/> Ever.</h3> -->
+                                       
+                                        <h3 class="nobottommargin t300 ls1">The world is full of cities and towns, constantly growing bigger, &amp; so are our traveling lists. It can be hard to check off your list alone, but when we connect &amp; share with others, we become part of something bigger. Imagine a world where people fulfill their dreams &amp; help others, creating meaningful relationships along the way.<br/><strong>planIt</strong> helps you <strong>create memories and experiences</strong> you always wished for with people alike.<br/>This not only helps you check off your bucket list but also makes it <strong>more economical by sharing the trip's cost with others</strong>.<br/><br/><strong>planIt</strong> stands for something bigger than just travel.<br/>We represents all of us, the people,<br/>and focus on 3 things:</h3><br/><br/><h2><strong>people | memories | adventures</strong></h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                   <!--  <div class="row">
+                        <div class="container center nobottommargin ">
+                            <div class="col-md-8 col-md-offset-2">
+                            <h1>why planIt</h1>
+                            <p class="lead">We travel, initially, to lose ourselves, and we travel, next, to find ourselves. We travel to open our hearts and eyes.<br/>But the happiness that comes with it is only real when shared.<br/><br/><strong>planIt</strong> helps you <strong>create memories and experiences</strong> <br/>you always wished for with people alike.<br/>This not only helps you check off your bucket list but also makes it <strong>more economical by sharing the trip's cost with others</strong>.<br/><br/>We travel, in essence, to become young fools again—to slow time down and get taken in, and fall in love once more. The great affair is to take the first step and move.<br/></p><h2><strong>Dream. Discover. Explore.</strong></h2>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+
+                </div>
+            </div>
+
+        </section>
+
+        
+
+ 

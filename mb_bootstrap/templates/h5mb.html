@@ -1,0 +1,174 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="{% block meta-author %} MACROBITS {% endblock %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block meta %}
+        <meta name="description" content="{% block meta-description %}{% endblock %}">
+        <meta name="keywords" content="{% block meta-keywords %}{% endblock %}" >
+        <meta name="Generator" content="{% block meta-generator %}{% endblock %}" >
+        {% endblock %}
+        <title>{% block title %}{% endblock %}</title>
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <link href="/static/css/site.css?ver={% now 'U' %}" rel="stylesheet">
+        {% block css-extras %}{% endblock %}
+
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+
+    <!-- One Page Module Specific Stylesheet -->
+    <link rel="stylesheet" href="/static/css/onepage.css" type="text/css" />
+    <!-- / -->
+
+    <link rel="stylesheet" href="/static/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/et-line.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="/static/css/fonts.css" type="text/css" />
+
+    <link rel="stylesheet" href="/static/css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- Begin MailChimp Signup Form -->
+    
+    <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/plugins.js"></script>
+    <script src="/static/js/holder.js"></script>
+    
+     <style>p1 {font-family: 'Helvetica Neue', "sans-serif";
+        color:white;font-weight: 300; font-size:5em;}
+        p2   {font-family: 'Helvetica Neue', "sans-serif";
+              margin-bottom: 20px;
+              font-size: 2em;
+              font-weight: 300;
+              line-height: 1.4;
+              color:white;}</style>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 20%;
+        width: 20%;
+      }
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+    </style>
+        
+        <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico">
+        <link rel="apple-touch-icon" href="{{ STATIC_URL }}apple-touch-icon.png">
+
+    </head>
+
+    <body class="stretched">
+        <div id="wrapper" class="clearfix">
+ 	{% block header %}{% endblock %}
+{% block body %}
+<!-- <div class="container-fluid main-container" id='main-container'> -->
+    {% block messages %}
+     {% if messages %}
+    <br/>
+    <div class="messages">
+    {% for message in messages %}
+        {% if message.tags %}
+            {% if message.tags == 'info' %}
+            <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Info:</strong>&nbsp;{{ message }}
+            </div>
+            {% elif message.tags == 'error' %}
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Error:</strong>&nbsp;{{ message }}
+            </div>
+            {% elif message.tags == 'success' %}
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Success:</strong>&nbsp;{{ message }}
+            </div>
+            {% elif message.tags == 'warning' %}
+            <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Warning:</strong>&nbsp;{{ message }}
+            </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    </div>
+    {% endif %}
+    {% endblock %}
+    {% block main-container %}
+    {% endblock %}
+
+    {% block footer %}
+
+    <div class="btn-list text-center footer">
+        <hr class="featurette-divider"/>
+        {% block footer_links %}{% endblock %}
+        <p class="text-muted copyright">Copyright&nbsp;&copy;&nbsp;{% now 'Y' %}&nbsp;planIt.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
+    </div>
+    {% endblock %}
+    </div>
+
+    {% endblock %}
+
+{% block js-imports %}
+{% endblock %}
+
+<script src="/static/js/bootstrap.min.js"></script>
+
+</body>
+</html>

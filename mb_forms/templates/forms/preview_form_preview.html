@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block main-container %}
+
+<h1>Preview your submission</h1>
+
+
+{% for field in form.visible_fields %}
+
+    <div class="row-fluid">
+        <div class="col-md-2 text-left">
+            <strong>{{ field.label }}</strong>
+        </div>
+        <div class="col-md-10 text-left">
+            <p>{{ field.data }}</p>
+        </div>
+    </div>
+
+{% endfor %}
+
+
+
+<form action="" method="post">{% csrf_token %}
+{% for field in form %}{{ field.as_hidden }}
+{% endfor %}
+<input type="hidden" name="{{ stage_field }}" value="2" />
+<input type="hidden" name="{{ hash_field }}" value="{{ hash_value }}" />
+    <div class="row-fluid">
+        <div class="col-lg-2"><button class="btn btn-block" type="button" onclick="window.history.back();">Edit</button></div>
+        <div class="col-lg-2"><button class="btn btn-block col-lg-9" type="submit">Submit</button></div>
+        <div class="col-lg-8">&nbsp;</div>
+    </div>
+
+</form>
+
+{% endblock %}

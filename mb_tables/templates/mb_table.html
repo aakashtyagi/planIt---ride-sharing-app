@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block css-extras %}
+{{ block.super }}
+<link href="/static/css/tables/bootstrap-table.css" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block js-imports %}
+{{ block.super }}
+<script src="/static/js/tables/bootstrap-table.js"></script>
+{% endblock %}

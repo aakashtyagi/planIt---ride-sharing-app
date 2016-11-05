@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block main-container %}
+<div class="container">
+	<div class="page-header">
+	    <h1>Thank You</h1>
+	</div>
+	<form action="" method="post">{% csrf_token %}
+	    {{ CONTACT_US_FORM.as_p }}
+	    <input type="submit" value="Send message" />
+	</form>
+</div>
+{% endblock %}

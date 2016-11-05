@@ -1,0 +1,1 @@
+User {{ username }} has requested to join {{ trip_name }}. Please approve or deny this request at {{ trip_url }}

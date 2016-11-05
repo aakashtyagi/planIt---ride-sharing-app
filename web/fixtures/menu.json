@@ -1,0 +1,222 @@
+[
+  {
+    "fields": {
+    "item_glyph": "glyphicon-th",
+    "item_visible_md": true,
+    "item_name": "Join a Trip",
+    "item_requires_login": false,
+    "item_parent": 0,
+    "item_visible_sm": true,
+    "item_slug": "",
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 3,
+    "item_visible_lg": true,
+    "item_link": "view_trips",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.menuitem"
+  },
+  {
+  "fields": {
+    "item_glyph": "glyphicon-home",
+    "item_visible_md": true,
+    "item_name": "Home",
+    "item_requires_login": false,
+    "item_parent": 0,
+    "item_visible_sm": true,
+    "item_slug": "",
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 1,
+    "item_visible_lg": true,
+    "item_link": "home",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.menuitem"
+  },
+  {
+  "fields": {
+    "item_glyph": "glyphicon-calendar",
+    "item_visible_md": true,
+    "item_name": "Plan a Trip",
+    "item_requires_login": false,
+    "item_parent": 0,
+    "item_visible_sm": true,
+    "item_slug": "",
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 2,
+    "item_visible_lg": true,
+    "item_link": "plan_trip",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.menuitem"
+  },
+  {
+  "fields": {
+    "item_glyph": "glyphicon-search",
+    "item_visible_md": false,
+    "item_name": "Search Trips",
+    "item_requires_login": false,
+    "item_parent": 0,
+    "item_visible_sm": false,
+    "item_slug": "",
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 3,
+    "item_visible_lg": false,
+    "item_link": "search_trips",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.menuitem"
+  },
+  {
+  "fields": {
+    "item_glyph": "glyphicon-menu-hamburger",
+    "item_visible_md": true,
+    "item_name": "My Profile",
+    "item_requires_login": true,
+    "item_parent": 0,
+    "item_visible_sm": true,
+    "item_slug": "",
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 4,
+    "item_visible_lg": true,
+    "item_link": "user_profile",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.menuitem"
+  },
+  {
+  "fields": {
+    "item_glyph": "glyphicon-user",
+    "item_visible_md": true,
+    "item_name": "Login",
+    "item_requires_login": false,
+    "item_parent": 0,
+    "item_visible_sm": true,
+    "item_slug": "",
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 5,
+    "item_visible_lg": true,
+    "item_link": "auth_login",
+    "item_requires_anon": true
+  },
+  "model": "mb_menu.menuitem"
+  },
+  {
+  "fields": {
+    "item_visible_md": true,
+    "item_name": "Twitter",
+    "item_requires_login": false,
+    "item_visible_sm": true,
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 2,
+    "item_visible_lg": true,
+    "item_link": "link_twitter",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.footerlink",
+  "pk": "46d61a110b3b4cc29a2dc09ad0b66c02"
+  },
+  {
+  "fields": {
+    "item_visible_md": true,
+    "item_name": "Facebook",
+    "item_requires_login": false,
+    "item_visible_sm": true,
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 1,
+    "item_visible_lg": true,
+    "item_link": "link_facebook",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.footerlink",
+  "pk": "7704351b0bf04d24a21452220451b278"
+  },
+  {
+  "fields": {
+    "item_visible_md": true,
+    "item_name": "Contact Us",
+    "item_requires_login": false,
+    "item_visible_sm": true,
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 4,
+    "item_visible_lg": true,
+    "item_link": "contact_us",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.footerlink",
+  "pk": "7809d338180044c484a4d551af4f958d"
+  },
+  {
+  "fields": {
+    "item_visible_md": true,
+    "item_name": "Logout",
+    "item_requires_login": true,
+    "item_visible_sm": true,
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 7,
+    "item_visible_lg": true,
+    "item_link": "auth_logout",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.footerlink",
+  "pk": "80fb4800729a4c4ba7efc87bbd8814f4"
+  },
+  {
+  "fields": {
+    "item_visible_md": true,
+    "item_name": "About Us",
+    "item_requires_login": false,
+    "item_visible_sm": true,
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 5,
+    "item_visible_lg": true,
+    "item_link": "about_us",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.footerlink",
+  "pk": "a40f54c703394244bc8afd6e6d3a0e44"
+  },
+  {
+  "fields": {
+    "item_visible_md": true,
+    "item_name": "Pinterest",
+    "item_requires_login": false,
+    "item_visible_sm": true,
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 3,
+    "item_visible_lg": true,
+    "item_link": "link_pinterest",
+    "item_requires_anon": false
+  },
+  "model": "mb_menu.footerlink",
+  "pk": "c083104db1ad4719ac7d85d9cda8ffc4"
+  },
+  {
+  "fields": {
+    "item_visible_md": true,
+    "item_name": "Login",
+    "item_requires_login": false,
+    "item_visible_sm": true,
+    "item_visible_xs": true,
+    "item_active": true,
+    "item_sort_order": 6,
+    "item_visible_lg": true,
+    "item_link": "auth_login",
+    "item_requires_anon": true
+  },
+  "model": "mb_menu.footerlink",
+  "pk": "e8b2ea82a0374f159a734f4319799106"
+  }
+]

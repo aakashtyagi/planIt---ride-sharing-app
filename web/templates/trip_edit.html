@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block main-container %}
+<div class="container">
+<div class="page-header">
+    <h2>Edit Trip</h2>
+    <h4>Update your trip information</h4>
+</div>
+
+<div role="edit_panel" style="background-image: url('/static/images/tcu-campus.jpg');">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a>
+        </li>
+        <li role="presentation"><a href="#departure" aria-controls="departure" role="tab" data-toggle="tab">Departure
+            Information</a></li>
+        <li role="presentation"><a href="#arrival" aria-controls="arrival" role="tab" data-toggle="tab">Arrival
+            Information</a></li>
+        <li role="presentation"><a href="#return" aria-controls="return" role="tab" data-toggle="tab">Returning
+            Information</a></li>
+        <li role="presentation"><a href="#travelers" aria-controls="travelers" role="tab"
+                                   data-toggle="tab">Travelers</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="edit_panel" class="tab-pane active" id="general">
+            {% include 'trip_edit_general.html' %}
+        </div>
+        <div role="edit_panel" class="tab-pane" id="departure">
+            {% include 'trip_edit_departure.html' %}
+        </div>
+        <div role="edit_panel" class="tab-pane" id="arrival">
+            {% include 'trip_edit_arrival.html' %}
+        </div>
+        <div role="edit_panel" class="tab-pane" id="return">
+            {% include 'trip_edit_return.html' %}
+        </div>
+        <div role="edit_panel" class="tab-pane" id="travelers">
+            {% include 'trip_edit_travelers.html' %}
+        </div>
+    </div>
+
+</div>
+</div>  
+{% endblock %}

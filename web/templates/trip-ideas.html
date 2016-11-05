@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block main-container %}
+<div class="container">
+    <div class="row center col-md-offset-4">
+        <div class="col-md-6">
+            <div class="fancy-title title-bottom-border center">
+                <h1>Trip <span>Ideas</span></h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <p class="lead">Looking for some inspiration for your next trip? <strong>planIt</strong> has scoured the globe to find the best destinations for any type of vacation. Whether you’re a beach bum, adventure junkie, or devout worshipper of the weekend getaway: yes, there’s a trip for that.</p>
+    </div>
+</div>
+<div class="container">
+    <div id="portfolio" class="portfolio-3 clearfix">
+
+
+    <div class="row">
+        {% if categories %}
+            {% for category in categories %}
+                <article class="portfolio-item pf-graphics pf-uielements">
+                    <div class="portfolio-image">
+                        
+                            <img class="img-responsive" src="{{category.image_url}}" alt="{{category.alt_tag}}">
+                    
+                        
+                    </div>
+                    <div class="portfolio-desc">
+                        <a href="/ideas/{{ category.url_name }}"><h3>{{ category.title }}</h3></a>
+                        <span>{{ category.short_desc }}</span>
+                    </div>
+                </article>
+            {% endfor %}
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+
+    </div>
+</div>
+</div>
+{% endblock %}

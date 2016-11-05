@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block main-container %}
+<div class="container">
+<div class="page-header">
+    <h2>{% trans page_title %}</h2>
+</div>
+<div class="form-view">
+    <!-- <h3>{% trans page_subtitle %}</h3> -->
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <form action="" method="post">{% csrf_token %}
+			    {{ form.as_p }}
+			    <input type="submit" class="btn btn-lg" style="color:#ffffff; background-color:#7a58ae; border-color:#6e4d9f" value="Log out" />
+			</form>
+
+        </div>
+        
+    </div>
+</div>
+</div>
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,83 @@
+{% load trips %}
+{% load truncate %}
+
+<div class="page-header">
+    <h2>Recent</h2>
+    <h4>Recently added trips</h4>
+</div>
+
+<div class="row">
+    {% for trip in recent_trips %}
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="panel panel-default trip">
+            <div class="panel-heading">
+                <p class="panel-title" style="color:white"><a href="{% url 'trip_details' %}?id={{ trip.id }}">{{ trip.name }}</a></p>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'trip_details' %}?id={{ trip.id }}">{% trip_image trip %}</a>
+                <blockquote>
+                    <p>{{ trip.descr|truncate:150 }}</p>
+                </blockquote>
+                <p><strong>Created by:</strong> {{ trip.created_by.first_name }}&nbsp;{{ trip.created_by.last_name }}<br/>For more info, email {{ trip.created_by.first_name }} at<br/><strong>{{ trip.created_by.email }}</strong></p>
+                <h4>Details:</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">Travel Date:
+                        <span class="badge">{{ trip.start_dt }}</span>
+                    </li>
+                    <li class="list-group-item">Arrival Date:
+                        <span class="badge">{{ trip.arrive_dt }}</span>
+                    </li>
+                    <li class="list-group-item">Return Date:
+                        <span class="badge">{{ trip.return_dt }}</span>
+                    </li>
+                    <li class="list-group-item">Current Number of Travelers:
+                        <span class="badge">{{ trip.get_current_members }}</span>
+                    </li>
+                    <li class="list-group-item">Current Number of Open Seats:
+                        <span class="badge">{{ trip.get_open_seats }}</span>
+                    </li>
+                </ul>
+                <h4>Destination:</h4>
+                <address>
+                    <strong>{{ trip.arrive_loc.name }}</strong><br/>
+                    {{ trip.arrive_loc.address_1 }}<br>
+                    {% if trip.arrive_loc.address_2|length %}
+                    {{ trip.arrive_loc.address_2 }}<br>
+                    {% endif %}
+                    {{ trip.arrive_loc.address_city }}, {{ trip.arrive_loc.address_state }}&nbsp;&nbsp;{{ trip.arrive_loc.address_postal }}<br>
+                </address>
+                <a class="btn btn-block" href="{% url 'trip_details' %}?id={{ trip.id }}">Trip Details</a>
+                {% if trip.get_open_seats > 0 %}
+                <a class="btn btn-block" href="{% url 'join_trip' %}?id={{ trip.id }}">Join Trip</a>
+                {% else %}<br/>
+                <div class="alert alert-warning">
+                  <strong>This trip is full!</strong> Create your own trip <a href="/trips/plan.html" style="color:purple">here</a>.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+        {% if forloop.counter|divisibleby:3 %}
+        <div class="clearfix visible-lg-block"></div>
+        {% elif forloop.counter|divisibleby:2 %}
+        <div class="clearfix visible-md-block"></div>
+        <div class="clearfix visible-sm-block"></div>
+        {% endif %}
+    {% empty %}
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="panel panel-default trip">
+            <div class="panel-heading">
+                <p class="panel-title" style="color:white"><a href="{% url 'plan_trip' %}">Create a new trip</a></p>
+            </div>
+            <div class="panel-body">
+                <blockquote>
+                    <p>No trips recently added trips</p>
+                </blockquote>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+

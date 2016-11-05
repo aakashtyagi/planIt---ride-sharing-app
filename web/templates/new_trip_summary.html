@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block main-container %}
+<div class="container-fluid">
+<div class="page-header">
+
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Make trip public now?</h1>
+            <h4>Make this trip visible for others to see and join it.</h4>
+            <button class='btn btn-block' onclick="$('#mbform').submit();">Make Trip Public</button>
+        </div>
+        <div class="col-md-8">
+            &nbsp;
+        </div>
+    </div>
+</div>
+
+{% include 'trip_details.html' %}
+
+<form method='post' id="mbform">
+{% csrf_token %}
+<input type='hidden' value='create_trip'/>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,156 @@
+body{
+	color:#6c558e;
+	font-size: 10pt;
+}
+
+body #main-container{
+	
+}
+
+body .footer{
+	margin-top: 25px;
+}
+
+.main-container{
+    margin-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.navbar-default{
+	background-image: linear-gradient(to bottom, #7a58ae 0%, #6c558e 100%);
+	border: 0px;
+	border-radius: 0px;
+}
+
+.navbar-default .navbar-header{
+    margin-right: 15px;
+    top: 18px;
+}
+
+.navbar-default .navbar-brand{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-brand:active{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-brand:visited{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-brand:focus{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
+    background-color: transparent;
+    background-image: none;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a{
+    margin-left: 10px;
+	color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:active{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:visited{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:focus{
+	color: #ffffff;
+}
+
+.navbar .input-group{
+    max-width: 300px;
+    top: 8px;
+    float: right;
+    right: 25px;
+}
+
+.help-block{
+	color: #351666;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.btn:hover,
+.btn:focus,
+.btn.focus,
+.btn:active,
+.btn{
+  color: #ffffff;
+  background-color: #7a58ae;
+  background-image: none;
+  border-color: #adadad;
+}
+
+.btn-link:hover,
+.btn-link:focus,
+.btn-link.focus,
+.btn-link:active,
+.btn-link{
+  color: #351666;
+}
+
+a:hover,
+a:focus,
+a.focus,
+a:active,
+a{
+  color: #7a58ae;
+}
+
+.trip{
+    border: 1px solid #dfdfdf;
+    min-height: 500px;
+    padding-top: 10px;
+}
+
+.trip .links{
+    position: absolute;
+    width: 95%;
+    bottom: 10px;
+    left: 10px;
+}
+
+@media all and (max-width: 60em){
+
+    .navbar-default .navbar-nav > li > a{
+        margin-left: 15px;
+    }
+
+    .navbar-default .navbar-header{
+        margin-right: 0px;
+    }
+
+    .navbar-default .navbar-container{
+        padding-right: 0px;
+    }
+}
+
+
+
+
+

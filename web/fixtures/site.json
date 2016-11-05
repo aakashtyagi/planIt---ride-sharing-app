@@ -1,0 +1,10 @@
+[
+{
+    "fields": {
+        "domain": "planit.macrobits.com",
+        "name": "Plan It"
+    },
+    "model": "sites.site",
+    "pk": 1
+}
+]

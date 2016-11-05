@@ -1,0 +1,65 @@
+<div class="container">
+{% include 'trip_image.html' %}
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3>{{ trip.name }}</h3>
+        <p>{{ trip.descr }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <p>Current Members:&nbsp;{{ trip.get_current_members }}</p>
+        <p>Open Seats:&nbsp;{{ trip.get_open_seats }}</p>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        &nbsp;
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <h4><u><strong>Starting Location</strong></u></h4>
+        <address>
+            <strong>{{ trip.start_loc.name }}</strong><br>
+            {{ trip.start_loc.address_1 }}<br>
+            {% if trip.start_loc.address_2 %}
+            {{ trip.start_loc.address_2 }}<br>
+            {% endif %}
+            {{ trip.start_loc.address_city }},&nbsp;{{ trip.start_loc.address_state }}&nbsp;{{ trip.start_loc.address_postal }}<br>
+
+            <p>Start Date/Time:&nbsp;&nbsp;{{ trip.start_dt }}</p>
+        </address>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <h4><u><strong>Arrival Location</strong></u></h4>
+        <address>
+            <strong>{{ trip.arrive_loc.name }}</strong><br>
+            {{ trip.arrive_loc.address_1 }}<br>
+            {% if trip.arrive_loc.address_2 %}
+            {{ trip.arrive_loc.address_2 }}<br>
+            {% endif %}
+            {{ trip.arrive_loc.address_city }},&nbsp;{{ trip.arrive_loc.address_state }}&nbsp;{{ trip.arrive_loc.address_postal }}<br>
+
+            <p>Arrival Date/Time:&nbsp;&nbsp;{{ trip.arrive_dt }}</p>
+        </address>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <h4><u><strong>Returning Location</strong></u></h4>
+        <address>
+            <strong>{{ trip.return_loc.name }}</strong><br>
+            {{ trip.return_loc.address_1 }}<br>
+            {% if trip.return_loc.address_2 %}
+            {{ trip.return_loc.address_2 }}<br>
+            {% endif %}
+            {{ trip.return_loc.address_city }},&nbsp;{{ trip.return_loc.address_state }}&nbsp;{{ trip.return_loc.address_postal }}<br>
+
+            <p>Return Date/Time:&nbsp;&nbsp;{{ trip.return_dt }}</p>
+        </address>
+    </div>
+</div>
+</div>
+

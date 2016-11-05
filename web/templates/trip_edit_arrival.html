@@ -1,0 +1,25 @@
+{% load bootstrap %}
+{% load i18n %}
+
+
+
+<div class="form-view">
+    <h3>Arrival Details</h3>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+            <form id="mbform_arrival" method="post" action="{% url 'trip_edit_arrival' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" value="{{ trip.id }}" name="id" />
+                {{ atf|bootstrap }}
+
+            </form>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+            &nbsp;
+        </div>
+    </div>
+</div>
+
+<button class="btn pull-left" type="button" onclick="$('#mbform_arrival').submit();">Save</button>
+

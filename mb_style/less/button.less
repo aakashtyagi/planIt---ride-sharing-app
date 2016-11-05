@@ -1,0 +1,106 @@
+@import "../../mb_bootstrap/less/mixins/buttons.less";
+@import "variables.less";
+
+.btn{
+    .button-variant(@btn-color, @btn-background-color, @btn-border-color);
+    background-image: @btn-background;
+}
+
+.btn-link{
+    background-image: none;
+    background-color: transparent;
+    color: @btn-background-color;
+    border: none;
+    
+    &:hover, &:active, &:focus{
+        background-color: transparent;
+        color: @btn-background-color;
+        border: none;
+    }
+}
+
+.btn-default{
+    .button-variant(@btn-color, @btn-background-color, @btn-border-color);
+    background-image: @btn-background;
+}
+
+/*
+a{
+    color: @btn-background-color;
+    &:hover, &:active, &:visited, &:focus{
+        color: @btn-background-color;
+    }
+}
+*/
+
+.pagination .active{
+    background-color: @btn-background-color;	    
+   a{
+       background-color: @btn-background-color;
+       
+       &:hover, &:active, &:visited, &:focus{
+	   background-color: @btn-background-color;
+       }
+   }
+}
+
+.pagination li{
+
+    a{
+	color: @btn-background-color;
+
+	&:hover, &:active, &:visited, &:focus{
+	    color: @btn-background-color;
+	}
+    }
+}
+
+
+
+.dropdown-menu{
+    background-color: @btn-background-color;
+    background-image: none;
+    color: @btn-color;
+    
+    .active{
+	background-color: @btn-background-color;
+	background-image: none;
+	color: @btn-color;
+	a{
+	    background-color: lighten(@btn-background-color, 10%);
+	    background-image: none;
+	    color: @btn-color;
+
+	    &:focus, &:hover{
+		background-color: lighten(@btn-background-color, 10%);
+		background-image: none;
+		color: @btn-color;
+	    }
+	}
+    }
+    
+    li{
+	a{
+	    .active{
+		background-color: @btn-background-color;
+		background-image: none;
+		color: @btn-color;
+	    }
+	    
+	    background-color: @btn-background-color;
+	    background-image: none;
+	    color: @btn-color;
+
+	    &:hover{
+		background-color: lighten(@btn-background-color, 10%);
+		color: @btn-color;
+	    }
+	    &:active, &:focus, &:visited{
+		background-color: @btn-background-color;
+		color: @btn-color;
+	    }
+	}
+    }
+}
+
+

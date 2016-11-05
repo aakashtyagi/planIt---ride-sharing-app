@@ -1,0 +1,28 @@
+{% load i18n %}
+{% load bootstrap %}
+
+<p class="btn-block">
+
+</p>
+
+<div class="container">
+	<div class="row">
+		<p class="lead">Hello {{ user.first_name }}, this is your profile<br/>
+			{{ user.userprofile.avatar}}<br/>{{ user.first_name }},{{ user.last_name }}, {{ user.email }} and oh,
+			you're missing your picture. Put that up asap. Thanks.</p>
+        <img src="{{ user.userprofile.avatar }}">
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+    	{{ user.userprofile.phone_number }}
+        <form id="mbform" method="post" action="{% url 'auth_profile_update' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ profile_form|bootstrap }}
+            <p><input id="id_image" type="file" class="" name="image"></p>
+            <button class="btn" type="submit">Save Changes</button>
+        </form>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">&nbsp;</div>
+</div>

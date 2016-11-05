@@ -1,0 +1,1 @@
+default_app_config = 'mb_setting.apps.MBSettingsConfig'

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main-container %}
+<div class="container">
+	<div class="row center">
+		<h1 class=" heading-block bottommargin">How to travel</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1">
+			<h1>Plan a trip</h1>
+			<p class="lead"><strong>Plan</strong> your trips in 4 easy steps! All you have to provide is general information about where you want to go &amp; how to get there and we'll help you create your trip and make it available to others to join.<br/>Click <a href="/trips/plan.html" style="color:red">here</a> to start planning your trips.</p>
+		</div>
+		<div class="col-md-4">
+			<img src="{% static 'images/plan.png' %}" width="60%" style="margin-left:100px;"/>
+		</div>
+	</div>
+	<br/><br/>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1">
+			<h1>Join a trip</h1>
+			<p class="lead"><strong>Join</strong> the trips you're interested in! If you see someone going somewhere you'd like to go, don't let anything stop you from joining them. Send them a join request and start creating your own adventure.<br/>Click <a href="/trips/" style="color:red">here</a> to start looking at trips you might be interested in.</p>
+		</div>
+		<div class="col-md-4">
+			<img src="{% static 'images/join.png' %}" width="60%" style="margin-left:100px;"/>
+		</div>
+	</div>
+	<br/><br/>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1">
+			<h1>Travel</h1>
+			<p class="lead">Once you know who you are going with and where you're traveling, all you have to do is get going!</p>
+		</div>
+		<div class="col-md-4">
+			<img src="{% static 'images/travel_2.png' %}" width="60%" style="margin-left:100px;"/>
+		</div>
+	</div>
+	<br/><br/>
+	<div class="row">
+		<div class="col-md-12 col-md-offset-5 col-xs-12 col-xs-offset-3">
+			<a href="https://www.facebook.com/yallplanit/" target="_blank" class="social-icon si-rounded si-colored si-facebook">
+			    <i class="icon-facebook"></i>
+			    <i class="icon-facebook"></i>
+			</a>
+			<a href="https://www.instagram.com/yallplanit/" target="_blank" class="social-icon si-rounded si-colored si-instagram">
+			    <i class="icon-instagram"></i>
+			    <i class="icon-instagram"></i>
+			</a>
+			<a href="https://www.pinterest.com/yallplanit/" target="_blank" class="social-icon si-rounded si-colored si-pinterest">
+			    <i class="icon-pinterest"></i>
+			    <i class="icon-pinterest"></i>
+			</a>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+[
+{
+    "fields": {
+        "url": "http://www.tcu.edu/",
+        "active": true,
+        "domain": "tcu.edu",
+        "name": "Texas Christian University"
+    },
+    "model": "web.activeedu",
+    "pk": 1
+}
+]

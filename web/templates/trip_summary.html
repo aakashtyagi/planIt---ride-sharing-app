@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block css-extras %}
+<style>
+.page-header .btn{
+    margin-right: 10px;
+}
+</style>
+{% endblock %}
+
+{% block main-container %}
+<div class="container" >
+<div class="page-header" >
+
+    {% if trip.created_by.id != user.id %}
+    <a href="{% url 'join_trip' %}?id={{ request.GET.id }}"  class="btn pull-right">Join Trip</a>
+    {% endif %}
+    {% if trip.created_by_id = request.user.id %}
+    <a href="{% url 'trip_edit' %}?id={{ request.GET.id }}"  class="btn pull-right">Edit Trip</a>
+    {% endif %}
+    <a href="{% url 'trip_travelers' %}?id={{ request.GET.id }}"  class="btn pull-right">Travelers</a>
+    <h2>Trip Details</h2>
+</div>
+</div>
+{% include 'trip_details.html' %}
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block main-container %}
+
+<div class="container">
+    <div id="fb-root"></div>
+    <script>
+
+        function isConnected(response) {
+            return response.status == 'connected';
+        }
+
+        function getLoginStatus(FB) {
+
+            FB.getLoginStatus(function(response) {
+
+                if (isConnected(response)) {
+                    onLogin(response);
+                }
+                else {
+                    FB.login(onLogin);
+                }
+            });
+        }
+
+        function onLogin(response) {
+
+            if (isConnected(response)) {
+                location.href = '/facebook_javascript_login_sucess?access_token=' + response.authResponse.accessToken;
+            }
+        }
+
+        window.fbAsyncInit = function() {
+
+            FB.init({
+                appId      : '{{FACEBOOK_APP_ID}}',
+                channelUrl : 'http://localhost:8000/media/channel.html',
+                status     : true,
+                cookie     : true,
+                xfbml      : true,
+                oauth      : true,
+            });
+
+        };
+
+        (function(d){
+             var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+             js = d.createElement('script'); js.id = id; js.async = true;
+             js.src = "http://connect.facebook.net/en_US/all.js";
+             d.getElementsByTagName('head')[0].appendChild(js);
+        }(document));
+
+    </script>
+
+        
+
+        
+        
+
+    
+
+<div class="fancy-title title-bottom-border center">
+                        <h1>collect moments. not things. <span></span></h1>
+                    </div>
+
+<!-- <div class="page-header center">
+    <h1>{% trans page_title %}collect moments. not things.</h1>
+</div> -->
+<div class="form-view">
+    
+    
+    <!-- <h3>{% trans page_subtitle %}</h3> -->
+
+    <div class="row center col-md-offset-4">
+        <div class="col-xs-12 col-sm-12 col-md-6">
+
+            <!-- <btn class="btn-facebook" onclick="getLoginStatus(FB)"></i>Facebook Javascript Login</btn> -->
+
+            <a class="btn btn-block btn-social btn-facebook btn-lg" style="background-color:#3B5998" onclick="getLoginStatus(FB)">
+            <span class="fa fa-facebook"></span> Sign Up with Facebook
+          </a>
+
+          <div class="divider divider-short divider-border divider-center"><p class="lead" style="color:black">or</p></i></div>
+
+            <form id="mbform" method="post" enctype="multipart/form-data" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+                {% csrf_token %}
+                {{ accountform|bootstrap }}
+                <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the <a target="_blank" href="{% url 'terms-of-use' %}" style="color:purple;">Terms of use</a> and <a target="_blank" href="{% url 'privacy-policy' %}" style="color:purple;">Privacy Policy</a>
+                <!-- <button class="btn btn-block" type="submit">{% trans page_submit %}</button> --><br/>
+                <div class="row center"><br/>
+                <button type="submit" class="button button-large button-border button-rounded">{% trans page_submit %}Sign Up</button></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock %}
+
+
+
